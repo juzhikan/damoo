@@ -27,6 +27,7 @@ function Damoo (options) {
     this.track = new Track(trackNum, trackWidth, trackHeight)
 }
 
+/* 公共样式配置，区别于 默认样式 和 字体对象 的个性化配置 */
 Damoo.prototype.getPublicConfig = function () {
     return {
         fontSize: this.fontSize,
@@ -143,7 +144,7 @@ Track.prototype.getValidTrackIndex = function () {
     return false
 }
 
-/* 将弹幕加入弹轨，准备发射弹幕 */
+/* 将弹幕加入弹轨，随后发射弹幕 */
 Track.prototype.addTrack = function (bullet, index) {
     var trackIndex = index !== undefined ? index : getRandom(0, this.num - 1)
     trackIndex = trackIndex || 0

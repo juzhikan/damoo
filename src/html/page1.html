@@ -13,10 +13,15 @@
             height: 100px;
             position: relative;
         }
+        #prize-wrap {
+            height: 100px;
+            background-color: #666;
+        }
     </style>
 </head>
 <body>
     <div id="dm-wrap"></div>
+    <div id="prize-wrap"></div>
     <%if (htmlWebpackPlugin.options.env === 'development') {%>
     <script src="/dll/common.dll.js"></script>
     <% } else {%>

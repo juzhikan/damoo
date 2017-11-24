@@ -30,3 +30,26 @@ export function getStyle (ele, prop) {
     }
     return (ele.currentStyle && ele.currentStyle[propBridge]) || getComputedStyle(ele, null)[prop]
 }
+
+export function locationMapping (length) {
+    var res = []
+    while (length--) {
+        res.unshift(length)
+    }
+    return res
+}
+
+export function randomMapping (length) {
+    /* 0-0 1-1 2-2 3-3 ...... */
+    var map = locationMapping(length)
+    var res = []
+    
+    while (map.length) {
+        var randomIndex = getRandom(0, map.length - 1)
+        var randomEntity = map[randomIndex]
+        res.push(randomEntity)
+        map.splice(randomIndex, 1)
+    }
+
+    return res
+}
