@@ -93,7 +93,7 @@ class PrizePool {
             prize.style.left = '50%'
             prize.style.transform = item.transform
             fragment.appendChild(prize)
-        });
+        })
         this.container.appendChild(fragment)
     }
 }
