@@ -1,6 +1,6 @@
 import {common} from '@/common'
 import {common2} from '@/common/index2'
-import Damoo from './Dammo'
+import Damoo from './Damoo'
 
 import './index.css'
 common('page1')

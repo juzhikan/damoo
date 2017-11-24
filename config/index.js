@@ -29,13 +29,19 @@ const dev = Object.assign({}, base, {
     }
 })
 
-const prod = Object.assign({}, base, {
+const prod = {
+    entry: {
+        dammo: './src/page1/Damoo.js'
+    },
     output: {
         path: resolve(__dirname, '../dist'),
-        filename: '[name].[hash].js',
-        publicPath: './'
+        filename: '[name].js',
+        publicPath: './',
+        library: 'Damoo',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
     }
-})
+}
 
 const dll = {
     entry: {

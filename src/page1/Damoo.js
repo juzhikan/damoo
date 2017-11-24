@@ -6,6 +6,8 @@
  * Released under the MIT license
  */
 
+import { supplement, getRandom, getElement, getStyle } from '@/common/utils'
+
 function Damoo (options) {
     var opt = options || {}
     var container = this.container = getElement(opt.container)
@@ -86,9 +88,6 @@ Damoo.prototype.flowOut = function () {
 }
 
 
-
-
-
 /**
  * 弹幕对象 样式：优先使用个性配置，其次使用公共配置，最后使用默认配置
  */
@@ -132,7 +131,6 @@ function Track (n, w, h) {
             duration: 0
         })
     }
-    console.log(this.records)
 }
 
 /* 获取可用的弹轨，无可用返回 false */
@@ -165,12 +163,10 @@ Track.prototype.addTrack = function (bullet, index) {
             return
         } else if (distance >= 0) {
             /* 可以放入，需要计算时间 */
-            console.log('-----------')
             var w = this.width
             var bullet_speed = (((w + nearestBullet.clientWidth) / duration) * w)/distance
             var bullet_duration = (bullet.clientWidth + w + 10)/bullet_speed
             bullet_duration = bullet_duration < 4 ? 4 : bullet_duration
-            console.log('-----------')
 
             this.shoot(bullet, bullet_duration, trackIndex, top)
             return
@@ -214,38 +210,3 @@ Pool.prototype.empty = function () {
 }
 
 export default Damoo
-
-
-
-/**
- * 对象b 对 对象a 进行补充，不会覆盖同名属性
- */
-function supplement (oa, ob) {
-    for (const key in ob) {
-        if (!(key in oa) && key !== 'fontSize') {
-            oa[key] = ob[key]
-        }
-    }
-    return oa
-}
-
-function getRandom (n, m) {
-    return Math.floor(Math.random()*(m - n + 1) + n)
-}
-
-function getElement (el) {
-  if (!(el && (typeof el === 'string' || (typeof el === 'object' && el.nodeType === 1)))) warn('element does not exist')
-  return (typeof el === 'string' && document.querySelector('#' + el)) || el
-}
-
-function getStyle (ele, prop) {
-    var result = prop.match(/[A-Z]/g)
-    if (!ele.currentStyle && result) {
-        var propBridge = prop
-        for (var i = 0; i < result.length; i++) {
-            var upperCase = result[i]
-            propBridge = propBridge.replace(upperCase, '-' + upperCase.toLowerCase())
-        }
-    }
-    return (ele.currentStyle && ele.currentStyle[propBridge]) || getComputedStyle(ele, null)[prop]
-}
