@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://easyread.nosdn.127.net/web/trunk/1510540164821/base.css">
+    <script src="https://easyread.nosdn.127.net/web/trunk/1510539795459/rem.min.js"></script>
+    
+    <title>page1</title>
+    <style>
+        #dm-wrap {
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="dm-wrap"></div>
+    <%if (htmlWebpackPlugin.options.env === 'development') {%>
+    <script src="/dll/common.dll.js"></script>
+    <% } else {%>
+    <script src="../dll/common.dll.js"></script>
+    <%}%>
+</body>
+</html>
