@@ -4,10 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node ./build/dev-server",
-    "build": "cross-env NODE_ENV=production node ./build/build",
-    "build:dll": "cross-env NODE_ENV=production node ./build/build_dll",
-    "build:dll:dev": "cross-env NODE_ENV=development node build/build_dll"
+    "dev": "parcel ./src/html/page1.html",
+    "build": "cross-env NODE_ENV=production node ./build/build"
   },
   "author": "",
   "license": "ISC",
@@ -45,5 +43,8 @@
     "webpack-dev-middleware": "^1.11.0",
     "webpack-hot-middleware": "^2.18.2",
     "webpack-merge": "^4.1.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
   }
 }

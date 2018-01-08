@@ -1,4 +1,4 @@
-import { getRandom, getElement, getStyle, locationMapping, randomMapping } from '@/common/utils'
+import { getRandom, getElement, getStyle, locationMapping, randomMapping } from '../common/utils'
 
 class PrizePool {
     constructor (options) {

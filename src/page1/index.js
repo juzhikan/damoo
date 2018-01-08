@@ -1,15 +1,9 @@
-import {common} from '@/common'
-import PrizePool from './PrizePool'
+/**
+ * 
+ */
 import Damoo from './Damoo'
 
 import './index.css'
-common('page1')
-/**
- * asdfasdfasdfasdfasdf
- */
-if (__dev) {
-    console.log('alall')
-}
 
 var damoo = new Damoo({
     container: 'dm-wrap',
@@ -41,21 +35,3 @@ damoo.load([
     '起飞的斧子获得鹿娘保温杯13个'])
 
 damoo.flowOut()
-
-var prizes = [
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png',
-    'https://easyread.nosdn.127.net/web/trunk/1511520651062/lottery2.png'
-]
-
-var prizePool = new PrizePool({
-    container: 'prize-wrap',
-    prizes: prizes
-})

@@ -3,7 +3,7 @@
  */
 export function supplement (oa, ob) {
     for (const key in ob) {
-        if (!(key in oa) && key !== 'fontSize') {
+        if (!(key in oa)) {
             oa[key] = ob[key]
         }
     }
@@ -15,8 +15,8 @@ export function getRandom (n, m) {
 }
 
 export function getElement (el) {
-  if (!(el && (typeof el === 'string' || (typeof el === 'object' && el.nodeType === 1)))) throw new Error('element does not exist')
-  return (typeof el === 'string' && document.querySelector('#' + el)) || el
+    if (!(el && (typeof el === 'string' || (typeof el === 'object' && el.nodeType === 1)))) throw new Error('element does not exist')
+    return (typeof el === 'string' && document.querySelector('#' + el)) || el
 }
 
 export function getStyle (ele, prop) {
